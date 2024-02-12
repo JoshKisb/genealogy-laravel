@@ -75,14 +75,14 @@ php artisan optimize:clear
 php artisan route:clear
 echo ""
 echo ""
-echo "\e[92m==================================\e[39m"
-echo "\e[92m============== DONE ==============\e[39m"
-echo "\e[92m==================================\e[39m"
+echo -e "\e[92m==================================\e[39m";
+echo -e "\e[92m============== DONE ==============\e[39m";
+echo -e "\e[92m==================================\e[39m";
 echo ""
 echo ""
-while $cond; do
-    read -p "🎬 DEV ---> DID YOU WANT TO START THE SERVER? (y/n) " cond
-    case $cond in
+while $yees; do
+    read -p "🎬 DEV ---> DID YOU WANT TO START THE SERVER? (y/n) " yees
+    case $yees in
         [Yy]* ) echo -e "\e[92mStarting server\e[39m"; php artisan serve; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no."; ;;

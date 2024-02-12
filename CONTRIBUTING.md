@@ -4,6 +4,8 @@ Contributions are **welcome** and will be fully **credited**. We accept contribu
 
 ## Setup
 
+IMPORTANT: please enable the ""intl" php extension in you apache server before running the script
+
 1. Download the project files from this github repo
 2. If you are on windows and you have Git Bash installed on your system you can open it in the project folder and just run the following command:
 
@@ -13,9 +15,11 @@ Contributions are **welcome** and will be fully **credited**. We accept contribu
 
 and everything should be installed automatically if you are using Linux you just run the script as you normally run scripts in the terminal.
 
-NOTE 1: The script will ask you if you want to have your .env be overwritten by .env.example, in case you have already an .env configuration available please answer with "n" (No).
+NOTE 1: Please make sure you have the database created before running the setup script
 
-NOTE 2: This script will run seeders, please make sure you are aware of this and don't run this script if you don't want this to happen.
+NOTE 2: The script will ask you if you want to have your .env be overwritten by .env.example, in case you have already an .env configuration available please answer with "n" (No).
+
+NOTE 3: This script will run seeders, please make sure you are aware of this and don't run this script if you don't want this to happen.
 
 ## Pull Requests
 
