@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * File header comment
+ *
+ * This file contains the definition of the GedcomResource class.
+ */
+
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\GedcomResource\Pages;
@@ -10,6 +16,13 @@ use Filament\Tables;
 use Filament\Tables\Table;
 
 class GedcomResource extends Resource
+{
+    /**
+     * Define the form fields for the resource.
+     *
+     * @param  Form  $form
+     * @return Form
+     */
 use Filament\Forms\Components\FileUpload;
 use App\Jobs\ImportGedcom;
 use Illuminate\Support\Facades\Storage;
@@ -20,6 +33,12 @@ use Illuminate\Support\Facades\Storage;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+        /**
+     * Define the form fields for the resource.
+     *
+     * @param  Form  $form
+     * @return Form
+     */
     public static function form(Form $form): Form
     {
         return $form
@@ -39,6 +58,12 @@ use Illuminate\Support\Facades\Storage;
             ]);
     }
 
+        /**
+     * Define the table columns, filters, actions, and bulk actions.
+     *
+     * @param  Table  $table
+     * @return Table
+     */
     public static function table(Table $table): Table
     {
         return $table
@@ -76,6 +101,11 @@ use Illuminate\Support\Facades\Storage;
         ];
     }
 
+        /**
+     * Import method description.
+     *
+     * @return array
+     */
     private static function import(): array
     {
     }
