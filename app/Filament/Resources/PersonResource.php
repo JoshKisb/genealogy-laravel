@@ -63,6 +63,18 @@ SelectInput::make('mother_id')
  */
 Textarea::make('notes')
                     ->label('Notes'),
+Select::make('child_in_family_id')
+    ->relationship('child_in_family', 'fullname')
+    ->searchable()
+    ->label('Child in Family'),
+Select::make('husband_id')
+    ->relationship('husband_in_family', 'fullname')
+    ->searchable()
+    ->label('Husband in Family'),
+Select::make('wife_id')
+    ->relationship('wife_in_family', 'fullname')
+    ->searchable()
+    ->label('Wife in Family'),
             ]);
     }
 
@@ -102,3 +114,9 @@ Textarea::make('notes')
         ];
     }
 }
+        return [
+            'index'  => Pages\ListPeople::route('/'),
+            'create' => Pages\CreatePerson::route('/create'),
+            'edit'   => Pages\EditPerson::route('/{record}/edit'),
+            'pedigreeChart' => Pages\ViewPedigreeChart::route('/pedigree-chart'),
+        ];
