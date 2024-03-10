@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom styles for pedigree chart */
+.svg-pedigree-chart circle {
+  @apply fill-current text-blue-500;
+}
+
+.svg-pedigree-chart path {
+  @apply stroke-current text-gray-500;
+}
+
+.svg-pedigree-chart text {
+  @apply text-sm text-black;
+}
