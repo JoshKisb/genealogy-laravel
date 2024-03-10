@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('layouts.home');
 });
+Route::middleware(['auth'])->group(function () {
+    Route::get('/pedigree-chart', function () {
+        return view('components.pedigree-chart');
+    })->name('pedigree-chart');
+});
