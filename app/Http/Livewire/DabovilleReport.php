@@ -26,7 +26,7 @@ class DabovilleReport extends Component
      */
     public function render()
     {
-        return view('livewire.devilliers-report');
+        return view('livewire.daboville-report');
     }
 
     /**
