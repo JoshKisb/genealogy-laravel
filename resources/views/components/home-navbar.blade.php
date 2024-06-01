@@ -38,8 +38,29 @@
                     <a href="/register" class="btn-nav">Register</a>
                 @endif
             </div>
+            
+            <div class="sm:hidden">
+                <button @click="isOpen = !isOpen" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out">
+                    <!-- Menu open: "hidden", Menu closed: "block" -->
+                    <svg class="block h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <!-- Menu open: "block", Menu closed: "hidden" -->
+                    <svg class="hidden h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
         </div>
     </nav>
+    <div class="mobile-menu-container" x-data="{ isOpen: false }" x-show="isOpen" @click.away="isOpen = false">
+        <div class="mobile-menu-content">
+            <!-- Navigation Links -->
+            <a href="{{ route('home') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">Home</a>
+            <a href="{{ route('about') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">About</a>
+            <a href="{{ route('contact') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">Contact</a>
+        </div>
+    </div>
 
     <script>
         function toggleDropdown() {
